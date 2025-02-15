@@ -6,14 +6,14 @@ export const Heroes = () => {
             <div className="flex items-center">
                 <div className="relative w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px]">
                     <Image
-                    src="/2808349.jpg"
+                    src="/notion-logo.svg"
                     fill
                     className="object-contain"
                     alt="Documents"/>
                 </div>
             <div className="relative h-[400px] w-[400px] hidden md:block">
                 <Image
-                src="/next.svg"
+                src="/home-office.svg"
                 fill
                 className="object-contain"
                 alt="Reeding"/>
