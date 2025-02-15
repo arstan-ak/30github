@@ -11,6 +11,14 @@ export const Heroes = () => {
                     className="object-contain"
                     alt="Documents"/>
                 </div>
+            <div className="relative h-[400px] w-[400px] hidden md:block">
+                <Image
+                src="/next.svg"
+                fill
+                className="object-contain"
+                alt="Reeding"/>
+
+            </div>
             </div>
         </div>
     )
