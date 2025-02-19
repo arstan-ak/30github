@@ -28,6 +28,11 @@ export const Navbar = () => {
                             Log in
                         </Button>
                     </SignInButton>
+                    <SignInButton mode="modal">
+                        <Button size="sm">
+                            Get My Notion free
+                        </Button>
+                    </SignInButton>
                     </>
                 )}
             </div>
