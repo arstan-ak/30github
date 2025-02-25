@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Spinner } from "@/components/spinner";
 import { SignInButton } from "@clerk/clerk-react";
 
+
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   return (
