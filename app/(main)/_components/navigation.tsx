@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, MenuIcon } from "lucide-react";
+import { ChevronLeft, MenuIcon, Sidebar } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
@@ -25,6 +25,22 @@ export const Navigation =() =>{
         isResizingRef.current = true;
         document.addEventListener("mousemove" ,handleMouseMove);
         document.addEventListener("mouseup" ,handleMouseUp);
+
+    };
+
+    const handleMouseMove = (event: MouseEvent) =>{
+        if(!isResizingRef.current) return;
+        let newWidth = event.clientX;
+
+        if(newWidth < 240) newWidth =240;
+        if(newWidth > 480) newWidth =480;
+
+        if(sidebarRef.current && navbarRef.current) {
+            sidebarRef.current.style.width = `${newWidth}px`;
+            navbarRef.current.style.setProperty("left", `${newWidth}px`);
+            navbarRef.current.style.setProperty("width", `calc(100% - ${newWidth}px)`);
+
+        }
 
     }
     return(
