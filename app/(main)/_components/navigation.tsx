@@ -41,8 +41,13 @@ export const Navigation =() =>{
             navbarRef.current.style.setProperty("width", `calc(100% - ${newWidth}px)`);
 
         }
+    };
 
-    }
+    const handleMouseUp = () => {
+        isResizingRef.current = false;
+        document.addEventListener("mousemove" ,handleMouseMove);
+        document.addEventListener("mouseup" ,handleMouseUp);
+    };
     return(
         <>
         <aside 
@@ -70,7 +75,7 @@ export const Navigation =() =>{
             </div>
             <div
             onMouseDown={handleMouseDown}
-            onClick={}
+            onClick={handleMouseUp}
             className="opacity-0 group-hover/sidebar:opacity-100
             transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0"
             />
