@@ -2,7 +2,7 @@
 
 import { ChevronLeft, MenuIcon, Sidebar } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 import { cn } from "@/lib/utils";
@@ -15,6 +15,20 @@ export const Navigation =() =>{
     const navbarRef = useRef<ElementRef<"div">>(null);
     const [isResetting, setIsResetting] = useState(false);
     const [isCollapsed, setIsCollapsed] = useState(isMobile);
+
+    useEffect(() =>{
+        if(isMobile){
+            collapse();
+        }else{
+            resetWidth();
+        }
+    },[isMobile])
+
+    useEffect(() =>{
+        if(isMobile){
+            collapse();
+        }
+    },[pathname,isMobile])
 
     const handleMouseDown = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>
